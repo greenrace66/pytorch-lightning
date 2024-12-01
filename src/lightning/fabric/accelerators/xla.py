@@ -111,15 +111,6 @@ def _using_pjrt() -> bool:
         from torch_xla import runtime as xr
 
         return xr.device_type() is not None
-    # delete me when torch_xla 2.2 is the min supported version, where XRT support has been dropped.
-    if _XLA_GREATER_EQUAL_2_1:
-        from torch_xla import runtime as xr
-
-        return xr.using_pjrt()
-
-    from torch_xla.experimental import pjrt
-
-    return pjrt.using_pjrt()
 
 
 def _parse_tpu_devices(devices: Union[int, str, list[int]]) -> Union[int, list[int]]:
