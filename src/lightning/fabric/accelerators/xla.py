@@ -33,8 +33,6 @@ class XLAAccelerator(Accelerator):
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         if not _XLA_AVAILABLE:
             raise ModuleNotFoundError(str(_XLA_AVAILABLE))
-        if not _using_pjrt():
-            raise RuntimeError("The XLA XRT runtime is not supported anymore.")
         super().__init__(*args, **kwargs)
 
     @override
