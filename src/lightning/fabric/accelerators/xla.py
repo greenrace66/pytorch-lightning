@@ -101,7 +101,7 @@ class XLAAccelerator(Accelerator):
 
 # PJRT support requires this minimum version
 _XLA_AVAILABLE = RequirementCache("torch_xla>=1.13", "torch_xla")
-_XLA_GREATER_EQUAL_2_1 = RequirementCache("torch_xla>=2.1")
+_XLA_GREATER_EQUAL_2_1 = RequirementCache("torch_xla<=2.4")
 _XLA_GREATER_EQUAL_2_5 = RequirementCache("torch_xla>=2.5")
 
 
